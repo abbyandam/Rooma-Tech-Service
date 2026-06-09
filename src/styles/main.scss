@@ -1,0 +1,171 @@
+// ============================================================
+// Variables
+// ============================================================
+
+// Colors
+$color-primary: #932833;
+$color-primary-light: #E91D25;
+$color-secondary: #015FA5;
+$color-tertiary: #B3D1CD;
+$color-tertiary-light: #E6EFEF;
+$color-background: #F6F5F3;
+$color-text: #231F20;
+$color-text-muted: #413A3B;
+$color-background-surface: #E5E2DC;
+$color-background-border: #B1A895;
+$color-error: $color-primary-light;
+
+// Typography
+$font-family-header: "Bayon", sans-serif;
+$font-family-body: "Noto Sans", sans-serif;
+$font-size-xs:   0.75rem;   // 12px
+$font-size-sm:   0.875rem;  // 14px
+$font-size-base: 1rem;      // 16px
+$font-size-md:   1.125rem;  // 18px
+$font-size-lg:   1.25rem;   // 20px
+$font-size-xl:   1.5rem;    // 24px
+$font-size-2xl:  2rem;      // 32px
+$font-size-3xl:  3rem;      // 48px
+
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-bold:    700;
+
+$line-height-base: 1.5;
+$line-height-tight: 1.2;
+
+// Spacing
+$space-1:  0.25rem;   // 4px
+$space-2:  0.5rem;    // 8px
+$space-3:  0.75rem;   // 12px
+$space-4:  1rem;      // 16px
+$space-5:  1.25rem;   // 20px
+$space-6:  1.5rem;    // 24px
+$space-8:  2rem;      // 32px
+$space-10: 2.5rem;    // 40px
+$space-12: 3rem;      // 48px
+$space-16: 4rem;      // 64px
+
+// Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-full: 9999px;
+$border-width: 1px;
+
+// Shadows
+$shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+$shadow-bottom: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+$shadow-top: 0px -4px 4px rgba(0, 0, 0, 0.25);
+$shadow-diagonal: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-desktop: 769px;
+
+// Transitions
+$transition-fast:   150ms ease;
+$transition-base:   250ms ease;
+$transition-slow:   400ms ease;
+
+// ============================================================
+// Mixins
+// ============================================================
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) { @content; }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ============================================================
+// Reset & Base
+// ============================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-family-body;
+  color: $color-text;
+  background-color: $color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-header;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
+
+p {
+  font-family: $font-family-body;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
