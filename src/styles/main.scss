@@ -6,6 +6,7 @@
 $color-primary: #932833;
 $color-primary-light: #E91D25;
 $color-secondary: #015FA5;
+$color-secondary-light: #07BBD8;
 $color-tertiary: #B3D1CD;
 $color-tertiary-light: #E6EFEF;
 $color-background: #F6F5F3;
@@ -55,9 +56,9 @@ $border-width: 1px;
 
 // Shadows
 $shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
-$shadow-bottom: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+$shadow-bottom: 0px 4px 4px rgba(0, 0, 0, 0.25);
 $shadow-top: 0px -4px 4px rgba(0, 0, 0, 0.25);
-$shadow-diagonal: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+$shadow-diagonal: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
 // Breakpoints
 $breakpoint-mobile: 768px;
@@ -92,11 +93,11 @@ $transition-slow:   400ms ease;
   justify-content: space-between;
 }
 
-@mixin truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+// @mixin truncate {
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+// }
 
 // ============================================================
 // Reset & Base
@@ -123,6 +124,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+div {
+  display: flex;
+}
+
 img,
 video {
   max-width: 100%;
@@ -130,12 +135,8 @@ video {
 }
 
 a {
-  color: $color-primary;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  color: $color-text;
 }
 
 button {
@@ -143,6 +144,39 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+}
+
+.primary-button {
+  background: $color-primary;
+  color: $color-background;
+  border-radius: $border-radius-md;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  box-shadow: $shadow-diagonal;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+
+  h1, h2, h3, h4, h5, h6, p {
+    text-shadow: $shadow-diagonal;
+  } 
+
+  &:hover {
+    filter: brightness(75%);
+  }
+}
+
+.background-button {
+  @include flex-center();
+  color: $color-text;
+  padding: 0.4em;
+  border-radius: $border-radius-sm;
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
+    background: $color-background-surface;
+  }
 }
 
 input,
@@ -161,6 +195,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: $font-size-base;
   font-weight: $font-weight-regular;
   line-height: $line-height-base;
+  line-height: 130%;
 }
 
 p {
