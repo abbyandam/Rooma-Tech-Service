@@ -5,10 +5,26 @@ import { FaAngleDown } from "react-icons/fa";
 import { services } from "../globals.tsx";
 import type { NavBarProps } from '../types/propTypes.tsx';
 import { pages } from '../globals.tsx';
+import { useRef, useEffect } from 'react';
 
 export default function NavBar({current_page}: NavBarProps) { 
+    const navRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const updateHeight = () => {
+        if (navRef.current) {
+            const height = navRef.current.offsetHeight
+            document.documentElement.style.setProperty('--navbar-height', `${height}px`)
+        }
+        }
+
+        updateHeight()
+        window.addEventListener('resize', updateHeight)
+        return () => window.removeEventListener('resize', updateHeight)
+    }, [])
+
     return (
-        <div className="nav-bar">
+        <div className="nav-bar" ref={navRef}>
             <Link to={'/'} className='brand'>
                 <img src={logo} alt='Company Logo'/>
                 <h2><span className='black-big'>R</span><span className='grad-primary'>ooma</span> <span className='black-big'>T</span><span className='grad-secondary'>ech</span></h2>
@@ -23,7 +39,7 @@ export default function NavBar({current_page}: NavBarProps) {
                     </Link>
                     <ol className='dropdown'>
                         { services.map((service) => {
-                            return (<li key={service}><Link to={'/'}><h4>{service}</h4><hr/></Link></li>)
+                            return (<li key={service}><Link to={'/services'}><h4>{service}</h4><hr/></Link></li>)
                         })}
                     </ol>
                 </div>
@@ -33,7 +49,7 @@ export default function NavBar({current_page}: NavBarProps) {
             </div>
             <div className='nav-items mobile'>
                 <div className='link-services'>
-                    <div className='background-button'>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
                         <h3>{current_page.page}</h3>
                         <FaAngleDown />
                     </div>

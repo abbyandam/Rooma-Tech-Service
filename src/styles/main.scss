@@ -19,6 +19,7 @@ $color-error: $color-primary-light;
 // Typography
 $font-family-header: "Bayon", sans-serif;
 $font-family-body: "Noto Sans", sans-serif;
+$font-size-xxs:   0.5rem;  
 $font-size-xs:   0.75rem;   // 12px
 $font-size-sm:   0.875rem;  // 14px
 $font-size-base: 1rem;      // 16px
@@ -64,13 +65,26 @@ $shadow-diagonal: 2px 2px 4px rgba(0, 0, 0, 0.25);
 $breakpoint-mobile: 768px;
 $breakpoint-desktop: 769px;
 
+// ============================================================
+// Animations
+// ============================================================
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@mixin fade-in($duration: 0.5s, $delay: 0s) {
+  animation: fadeIn $duration ease $delay forwards;
+}
+
 // Transitions
 $transition-fast:   150ms ease;
 $transition-base:   250ms ease;
 $transition-slow:   400ms ease;
 
 // ============================================================
-// Mixins
+// Other Mixins
 // ============================================================
 
 @mixin mobile {
@@ -122,6 +136,11 @@ body {
   background-color: $color-background;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+}
+
+main {
+  margin-top: var(--navbar-height);
 }
 
 div {
@@ -156,13 +175,15 @@ button {
   text-align: center;
   white-space: nowrap;
   width: fit-content;
+  transform: $transition-base;
 
   h1, h2, h3, h4, h5, h6, p {
     text-shadow: $shadow-diagonal;
   } 
 
   &:hover {
-    filter: brightness(75%);
+    filter: brightness(130%);
+    transform: scale(1.05);
   }
 }
 
