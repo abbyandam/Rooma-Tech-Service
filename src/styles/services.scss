@@ -1,0 +1,58 @@
+@use '../styles/main.scss' as *;
+
+.services {
+    @include flex-center;
+    flex-direction: column;
+    gap: 2.5em;
+    padding: 2em 1em 5em 1em;
+
+    .title {
+        @include flex-center;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: $font-size-2xl;
+    }
+
+    h3 {
+        font-size: $font-size-xl;
+    }
+
+    h4 {
+        font-size: $font-size-lg;
+        color: $color-primary;
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2em 6em;
+        @include mobile {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 2em 1em;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 0.75em;
+            flex-direction: column;
+            max-width: 20ch;
+        }
+
+        h5 {
+            font-size: $font-size-lg;
+        }
+
+        img {
+            border-radius: $border-radius-sm;
+        }
+        
+        p {
+            font-size: $font-size-sm;
+        }
+    }
+}
