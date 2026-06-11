@@ -28,6 +28,7 @@ $font-size-lg:   1.25rem;   // 20px
 $font-size-xl:   1.5rem;    // 24px
 $font-size-2xl:  2rem;      // 32px
 $font-size-3xl:  3rem;      // 48px
+$font-size-4xl:  4rem;    
 
 $font-weight-regular: 400;
 $font-weight-medium:  500;
@@ -59,6 +60,8 @@ $border-width: 1px;
 $shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
 $shadow-bottom: 0px 4px 4px rgba(0, 0, 0, 0.25);
 $shadow-top: 0px -4px 4px rgba(0, 0, 0, 0.25);
+$shadow-bottom-light: 0px 2px 4px rgba(0, 0, 0, 0.25);
+$shadow-top-light: 0px -2px 4px rgba(0, 0, 0, 0.25);
 $shadow-diagonal: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
 // Breakpoints
@@ -141,6 +144,9 @@ body {
 
 main {
   margin-top: var(--navbar-height);
+  box-shadow: $shadow-bottom;
+  position: relative;
+  z-index: 1;
 }
 
 div {
@@ -156,6 +162,20 @@ video {
 a {
   text-decoration: none;
   color: $color-text;
+}
+
+.link {
+  @include flex-center;
+  gap: 0.5em;
+  color: $color-background;
+  padding: 0.5em;
+  border-radius: $border-radius-md;
+  transition: $transition-base;
+
+  &:hover {
+    text-decoration: underline;
+    background: #e5e2dc5a;
+  }
 }
 
 button {
@@ -176,6 +196,30 @@ button {
   white-space: nowrap;
   width: fit-content;
   transform: $transition-base;
+
+  h1, h2, h3, h4, h5, h6, p {
+    text-shadow: $shadow-diagonal;
+  } 
+
+  &:hover {
+    filter: brightness(130%);
+    transform: scale(1.05);
+  }
+}
+
+.secondary-button {
+  background: $color-secondary;
+  color: $color-background;
+  border-radius: $border-radius-md;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  box-shadow: $shadow-diagonal;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+  transform: $transition-base;
+  @include flex-center;
+  gap: 0.5em;
 
   h1, h2, h3, h4, h5, h6, p {
     text-shadow: $shadow-diagonal;
@@ -225,3 +269,9 @@ p {
   font-weight: $font-weight-regular;
   line-height: $line-height-base;
 }
+
+span.big { font-size: $font-size-xl; @include mobile { font-size: $font-size-lg;}}
+span.bold { font-weight: $font-weight-bold;}
+span.underline { text-decoration: underline; }
+span.italic { font-style: italic; }
+span.tertiary { color: $color-tertiary; }
