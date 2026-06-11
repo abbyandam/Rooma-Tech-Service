@@ -263,6 +263,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 130%;
 }
 
+h1 { font-size: $font-size-3xl; }
+h2 { font-size: $font-size-2xl; }
+h3 { font-size: $font-size-xl; }
+h4 { font-size: $font-size-lg; }
+h5 { font-size: $font-size-md; }
+h6 { font-size: $font-size-sm; }
+p { font-size: $font-size-sm; }
+
 p {
   font-family: $font-family-body;
   font-size: $font-size-base;

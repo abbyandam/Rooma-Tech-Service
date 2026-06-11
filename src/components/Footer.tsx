@@ -19,14 +19,14 @@ export default function Footer() {
                     <p>{footer_text}</p>
                 </div>
                 <div className="sections">
-                    <div className="services section">
-                        <h2>Services</h2>
+                    <div className="footer-services section">
+                        <h4>Services</h4>
                         {services.map((service) => (
                             <Link to={'/services'} key={service}><p>{service}</p></Link>
                         ))}
                     </div>
                     <div className="contacts section">
-                        <h2>Contacts</h2>
+                        <h4>Contacts</h4>
                         <div>
                             <FaPhoneAlt />
                             <p><span className="bold-tertiary">Phone</span> {contact_info.phone}</p>
@@ -41,7 +41,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="location section">
-                        <h2>Hours</h2>
+                        <h4>Hours</h4>
                         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'baseline'}}>
                             <p><span className="bold-tertiary">{hours.open_days}</span> {hours.open_hours}</p>
                             <p><span className="bold-tertiary">{hours.closed_days}</span> Closed</p>

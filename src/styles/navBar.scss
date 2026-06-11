@@ -13,17 +13,32 @@
 .nav-bar .brand {
     @include flex-center;
     gap: 1em;
+    width: fit-content;
 
     img {
         height: 4rem;
     }
 
+    h2 {
+        line-height: 100%;
+    }
+
+    .break {
+        display: none;
+    }
+
     span.black-big {
-        font-size: $font-size-2xl
+        font-size: $font-size-2xl;
+        @include mobile {
+            font-size: $font-size-xl;
+        }
     }
     
     span.grad-primary {
         font-size: $font-size-xl;
+        @include mobile {
+            font-size: $font-size-lg;
+        }
         background: linear-gradient(90deg, $color-primary-light, $color-primary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -32,6 +47,9 @@
 
     span.grad-secondary {
         font-size: $font-size-xl;
+        @include mobile {
+            font-size: $font-size-lg;
+        }
         background: linear-gradient(90deg, $color-secondary-light, $color-secondary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -62,13 +80,14 @@
         position: relative;
 
         &:hover .dropdown {
-            display: flex;
             @include fade-in(0.4s);
         }
-    }
 
-    .link-services .dropdown {
-        display: none
+        h5 {
+            @include mobile {
+                font-size: $font-size-sm;
+            }
+        }
     }
 
     .dropdown {
@@ -80,7 +99,6 @@
         flex-direction: column;
         gap: 0.75em;
         box-shadow: $shadow-bottom;
-        display: none;
         color: $color-text;
         font-size: $font-size-sm;
         padding-block: 0.5em;
@@ -106,5 +124,11 @@
             background: $color-background;
             filter: brightness(95%);
         }
+    }
+}
+
+.nav-bar .primary-button h5 {
+    @include mobile {
+        font-size: $font-size-sm;
     }
 }
