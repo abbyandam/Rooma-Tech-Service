@@ -30,12 +30,6 @@ export default function NavBar({current_page}: NavBarProps) {
         setIsOpen(false)
     }, [pathname])
 
-    const [fontReady, setFontReady] = useState(false)
-
-    useEffect(() => {
-        document.fonts.ready.then(() => setFontReady(true))
-    }, [])
-
     return (
         <div className="nav-bar" ref={navRef}>
             <Link to={'/'} className='brand'>
@@ -57,7 +51,7 @@ export default function NavBar({current_page}: NavBarProps) {
                     { isOpen && 
                         (<ol className='dropdown'>
                             { services.map((service) => {
-                                return (<li key={service}><Link to={'/services'}><h5>{service}</h5><hr/></Link></li>)
+                                return (<li key={service.id}><Link to={`/services?service=${service.id}`}><h5>{service.name}</h5><hr/></Link></li>)
                             })}
                         </ol>)
                     }

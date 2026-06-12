@@ -20,7 +20,7 @@ export default function Home() {
             <Link to={'/quote'} className='primary-button'><h2>Request a Quote</h2></Link>
             <Link to={'/quote'} className='secondary-button'><h2>Contact</h2><FaPhoneAlt /></Link>
         </div>
-        <Link to={'/services'} className='link'>
+        <Link to={'/services?service=phone'} className='link'>
             <span className='bold'>Get <span className='underline italic'>Free</span> Phone Troubleshooting</span>
             <FaRegArrowAltCircleRight />
         </Link>

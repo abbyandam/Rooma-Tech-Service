@@ -1,0 +1,48 @@
+@use "../styles/main.scss" as *;
+
+.reviews {
+    @include flex-center;
+    position: relative;
+    flex-direction: column;
+    padding-block: 3em;
+    padding-inline: 2em;
+    min-height: 80vh;
+
+    svg {
+        fill: $color-primary;
+        height: 1.5rem;
+        width: auto;
+    }
+
+    img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 10%;
+        mix-blend-mode: darken;
+    }
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        @include flex-center;
+        gap: 1em;
+        max-width: calc((35ch + 1em + 0.6em) * 3);
+    }
+
+    .review {
+        display: flex;
+        flex-direction: column;
+        max-width: 32ch;
+        background: $color-tertiary-light;
+        border-radius: $border-radius-sm;
+        padding: 1em;
+        gap: 0.6em;
+
+        h6 {
+            color: $color-secondary
+        }
+    }
+}

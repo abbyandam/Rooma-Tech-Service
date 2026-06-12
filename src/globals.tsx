@@ -7,7 +7,15 @@ import ServiceArea from "./pages/ServiceArea"
 import Services from "./pages/Services"
 import type { Page } from "./types/propTypes"
 
-export const services = ['HVAC', 'Electric', 'Plumbing', 'Kitchen Design & Remodeling', 'Bath Design & Remodeling']
+// export const services = ['HVAC', 'Electric', 'Plumbing', 'Kitchen Design & Remodeling', 'Bath Design & Remodeling']
+export const services = [
+    { id: 'hvac', name: 'HVAC'},
+    { id: 'electric', name: 'Electric'},
+    { id: 'plumbing', name: 'Plumbing'},
+    { id: 'kitchen', name: 'Kitchen Design & Remodeling'},
+    { id: 'bathroom', name: 'Bath Design & Remodeling'},
+]
+
 
 export const pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 
                       {page: 'About Us', link: '/about-us', element: <AboutUs />}, 
@@ -34,3 +42,11 @@ export const hours = {
 export const aboutUs = "Rooma Tech Service is a small team based in Lancaster, PA. I've been in the trades for over 24 years, providing my services since 2009 and officially launching in the Lancaster area in 2019. I have full certifications in HVAC, OSHA Safety, and EMP, ensuring quality work.\n\nFor me, personal service is a guarantee. When you call, you're speaking directly to the person doing the work. No waiting months for a project to start. I don’t deal with subcontractors so we can start sooner and get the job done faster.\n\nAt the end of the day, happy customers is the top priority. We deliver luxury work, know what we're doing, and always clean up after ourselves. Every project gets full attention and is done right the first time."
 
 export const cities = ['Lancaster', 'Lititz', 'New Holland', 'Reading', 'Mt Joy', 'Middletown', 'West Chester', 'York', 'Lebanon', 'Harrisburg', 'Elizabethtown']
+
+export const reviews = [
+    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+]

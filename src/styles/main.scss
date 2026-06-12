@@ -131,6 +131,7 @@ $transition-slow:   400ms ease;
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
 }
 
 body {
@@ -140,6 +141,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
+  min-height: 100vh;
+  overscroll-behavior: none;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 main {
@@ -269,11 +276,10 @@ h3 { font-size: $font-size-xl; }
 h4 { font-size: $font-size-lg; }
 h5 { font-size: $font-size-md; }
 h6 { font-size: $font-size-sm; }
-p { font-size: $font-size-sm; }
+p { font-size: $font-size-xs; }
 
 p {
   font-family: $font-family-body;
-  font-size: $font-size-base;
   font-weight: $font-weight-regular;
   line-height: $line-height-base;
 }

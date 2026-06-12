@@ -10,10 +10,13 @@
     }
     color: $color-background;
     height: fit-content;
-    @include flex-center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
     flex-direction: column;
     gap: 1em;
     position: relative;
+    height: 100%;
 
     hr {
         width: 100%;
@@ -94,6 +97,12 @@
 }
 
 .footer .section {
+    &.footer-services {
+        @include mobile {
+            display: none;
+        }
+    }
+
     display: flex;
     flex-direction: column;
     gap: 0.25em;
@@ -136,8 +145,3 @@
     }
 }
 
-.footer-services {
-    @include mobile {
-        display: none;
-    }
-}

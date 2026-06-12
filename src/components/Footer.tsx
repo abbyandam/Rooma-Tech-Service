@@ -22,7 +22,7 @@ export default function Footer() {
                     <div className="footer-services section">
                         <h4>Services</h4>
                         {services.map((service) => (
-                            <Link to={'/services'} key={service}><p>{service}</p></Link>
+                            <Link to={'/services'} key={service.id}><p>{service.name}</p></Link>
                         ))}
                     </div>
                     <div className="contacts section">
