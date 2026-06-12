@@ -1,4 +1,3 @@
-import portrait from "../assets/about_us_portrait.png"
 import "../styles/aboutUs.scss"
 import { aboutUs } from "../globals"
 
@@ -9,11 +8,11 @@ export default function AboutUs() {
                     <div className="text">
                         <h2>About Us</h2>
                         <h4>Family Owned & Operated since 2019</h4>
-                        <img src={portrait}></img>
+                        <img src='/about_us_portrait.png'></img>
                         <p>{aboutUs}</p>
                     </div>
                     <div className="portrait">
-                        <img src={portrait}></img>
+                        <img src='/about_us_portrait.png'></img>
                     </div>
             </div>
             <div className="why-us">

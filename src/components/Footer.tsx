@@ -1,21 +1,19 @@
 import { footer_text } from "../globals"
-import logo from "../assets/logo.png"
 import "../styles/footer.scss"
 import { services, contact_info, hours } from "../globals"
 import { Link } from "react-router-dom"
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-import background_overlay from "../assets/background-overlay.avif";
 
 export default function Footer() {
     return (
         <div className="footer">
-            <img className="background-overlay" src={background_overlay}/>
-            <img className="background-overlay flip" src={background_overlay}/>
+            <img className="background-overlay" src='/background-overlay.avif'/>
+            <img className="background-overlay flip" src='/background-overlay.avif'/>
             <div className="footer-content">
                 <div className="brand">
-                    <img src={logo}/>
+                    <img src='/logo.png'/>
                     <p>{footer_text}</p>
                 </div>
                 <div className="sections">

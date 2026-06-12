@@ -1,11 +1,10 @@
 import { cities } from "../globals"
 import "../styles/serviceArea.scss"
-import map from "../assets/map.png"
 
 export default function ServiceArea() {
     return (
         <div className="service-area">
-            <img src={map}/>
+            <img src='map.png'/>
             <h2>Service Area</h2>
             <div className="gap"/>
             <span className="tertiary"><h3>Pennsylvania</h3></span>

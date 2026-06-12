@@ -1,0 +1,91 @@
+@use "../styles/main.scss" as *;
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    h2 {
+        margin-inline: 1em;
+    }
+
+    .images {
+        width: 100vw;
+        height: 60vh;
+        position: relative;
+        overflow: hidden;
+        box-shadow: $shadow-top-light;
+    }
+
+    .carousel {
+        position: absolute;
+        display: flex;
+        height: fit-content;
+        width: fit-content;
+        overflow: hidden;
+    }
+
+    .image {
+        width: 100vw;
+    }
+
+    img {
+        object-fit: cover;
+        width: 50vw;
+        height: 60vh;
+        z-index: -1;
+    }
+
+    .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-self: center;
+        width: 100%;
+        height: 100%;
+        color: $color-background;
+        box-shadow: $shadow-top-light;
+        z-index: 1;
+        
+        svg {
+            color: $color-background;
+            height: 4em;
+            width: auto;
+            filter: drop-shadow($shadow-diagonal);
+        }
+    }
+
+    .before, .after {
+        justify-content: end;
+        position: relative;
+
+        button, h2 {
+            position: absolute;
+        }
+
+        button {
+            align-self: center;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                filter: brightness(150%);
+            }
+        }
+
+        h2 {
+            align-self: end;
+            text-shadow: $shadow-diagonal;
+        }
+    }
+
+    .before button {
+        left: 0;
+        &:hover {
+            transform: translateX(-4px) scale(1.2);
+        }
+    }
+
+    .after button:hover {
+
+        transform: translateX(4px) scale(1.2);
+    }
+}

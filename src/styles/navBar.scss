@@ -122,8 +122,12 @@
             gap: 0.2em;
             padding-inline: 3em;
             padding-block: 0.25em;
-            width: 100%;
+            // width: 30ch;
             text-align: center;
+
+            h5 {
+                width: 100%;
+            }
         }
 
         li:hover {

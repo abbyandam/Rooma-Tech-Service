@@ -1,5 +1,4 @@
 import '../styles/navBar.scss'
-import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { FaAngleDown } from "react-icons/fa";
 import { services } from "../globals.tsx";
@@ -33,7 +32,7 @@ export default function NavBar({current_page}: NavBarProps) {
     return (
         <div className="nav-bar" ref={navRef}>
             <Link to={'/'} className='brand'>
-                <img src={logo} alt='Company Logo'/>
+                <img src='logo.png' alt='Company Logo'/>
                 <h2><span className='black-big'>R</span><span className='grad-primary'>ooma</span><span className='black-big'>T</span><span className='grad-secondary'>ech</span></h2>
             </Link>
             <div className='nav-items desktop'>
