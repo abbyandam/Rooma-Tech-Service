@@ -17,6 +17,9 @@
 
     img {
         height: 4rem;
+        @include mobile {
+            height: 3rem;
+        }
     }
 
     h2 {
@@ -84,6 +87,8 @@
         }
 
         h5 {
+            width: min-content;
+            text-align: center;
             @include mobile {
                 font-size: $font-size-sm;
             }

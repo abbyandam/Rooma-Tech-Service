@@ -278,6 +278,10 @@ p {
   line-height: $line-height-base;
 }
 
+.gap {
+  height: 1em;
+}
+
 span.big { font-size: $font-size-xl; @include mobile { font-size: $font-size-lg;}}
 span.bold { font-weight: $font-weight-bold;}
 span.underline { text-decoration: underline; }

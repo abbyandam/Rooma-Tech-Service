@@ -1,0 +1,35 @@
+@use "../styles/main.scss" as *;
+
+.service-area {
+    @include flex-center;
+    flex-direction: column;
+    position: relative;
+    color: $color-background;
+    padding: 3em;
+
+    img {
+        position: absolute;
+        object-fit: cover;
+        z-index: -1;
+        filter: contrast(50%) brightness(60%);
+        height: 100%;
+        width: 100%;
+    }
+
+    hr {
+        width: 20ch;
+        border: solid $color-tertiary 1px;
+    }
+
+    ol {
+        margin-top: 0.25em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 0.25em;
+    }
+
+    p {
+        text-align: center;
+    }
+}
