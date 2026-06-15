@@ -1,0 +1,86 @@
+@use '../styles/main.scss' as *;
+
+.quote {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include mobile {
+        grid-template-columns: 1fr;
+        grid-template-rows: fit-content 1fr;
+    }
+
+    .contact {
+        @include flex-center;
+        flex-direction: column;
+        position: relative;
+        color: $color-background;
+        gap: 0.4em;
+        padding: 2em;
+
+        img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(65%);
+        }
+
+        p {
+            font-size: $font-size-sm;
+        }
+    }
+
+    form {
+        background: $color-background-surface;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1em;
+
+        div {
+            width: 100%;
+            display: flex;
+            gap: 1em;
+        }
+
+        input, .dropdown, textarea {
+            width: 100%;
+            height: 3em;
+            border: none;
+            border-radius: $border-radius-md;
+            box-shadow: $shadow-diagonal;
+            background: $color-background;
+            padding: 0.5em;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: $color-background-border;
+        }
+
+        textarea {
+            height: 12em
+        }
+
+        .upload-button {
+            background: $color-background;
+            padding: 1em;
+            border-radius: $border-radius-md;
+            width: fit-content;
+            display: flex;
+            gap: 0.25em;
+            align-items: center;
+            box-shadow: $shadow-diagonal;
+            color: $color-text;
+            transition: $transition-fast;
+
+            &:hover {
+                transform: scale(105%);
+                filter: brightness(105%);
+            }
+        }
+
+        .secondary-button {
+            align-self: center;
+        }
+    }
+}

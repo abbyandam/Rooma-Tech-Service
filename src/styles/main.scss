@@ -202,7 +202,7 @@ button {
   text-align: center;
   white-space: nowrap;
   width: fit-content;
-  transform: $transition-base;
+  transition: $transition-fast;
 
   h1, h2, h3, h4, h5, h6, p {
     text-shadow: $shadow-diagonal;
@@ -224,9 +224,9 @@ button {
   text-align: center;
   white-space: nowrap;
   width: fit-content;
-  transform: $transition-base;
   @include flex-center;
   gap: 0.5em;
+  transition: $transition-fast;
 
   h1, h2, h3, h4, h5, h6, p {
     text-shadow: $shadow-diagonal;
@@ -244,6 +244,7 @@ button {
   padding: 0.4em;
   border-radius: $border-radius-sm;
   text-align: center;
+  transition: $transition-fast;
 
   &:hover {
     text-decoration: underline;

@@ -23,6 +23,13 @@ export default function Home() {
             <span className='bold'>Get <span className='underline italic'>Free</span> Phone Troubleshooting</span>
             <FaRegArrowAltCircleRight />
         </Link>
+        <div className='qualifications'>
+            <h3><span>7+ Years in Business</span></h3>
+            <hr/>
+            <h3><span>Licensed & Certified</span></h3>
+            <hr/>
+            <h3><span>11+ Cities Served</span></h3>
+        </div>
     </div>
     )
 }

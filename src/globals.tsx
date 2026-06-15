@@ -12,10 +12,9 @@ export const services = [
     { id: 'hvac', name: 'HVAC'},
     { id: 'electric', name: 'Electric'},
     { id: 'plumbing', name: 'Plumbing'},
-    { id: 'kitchen', name: 'Kitchen Design & Remodeling'},
-    { id: 'bathroom', name: 'Bath Design & Remodeling'},
+    { id: 'kitchen', name: 'Kitchen'},
+    { id: 'bathroom', name: 'Bath'},
 ]
-
 
 export const pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 
                       {page: 'About Us', link: '/about-us', element: <AboutUs />}, 

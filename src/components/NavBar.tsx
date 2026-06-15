@@ -42,6 +42,7 @@ export default function NavBar({current_page}: NavBarProps) {
                     className='link-services' 
                     onMouseEnter={() => setIsOpen(true)}
                     onMouseLeave ={() => setIsOpen(false)}
+                    onClick={() => (setIsOpen(!isOpen))}
                 >
                     <Link to={'/services'} className='background-button'>
                         <h5>Services</h5>

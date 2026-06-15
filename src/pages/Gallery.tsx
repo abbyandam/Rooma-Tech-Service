@@ -96,6 +96,7 @@ export default function Gallery() {
                     ))}
                 </div>
                 <div className='controls'> 
+                    {/* Desktop Only */}
                     <div className='before'>
                         <button 
                             onClick={prev}
@@ -113,6 +114,21 @@ export default function Gallery() {
                             <FaAngleRight />
                         </button>
                         <h2>After</h2>
+                    </div>
+                    {/* Mobile Only */}
+                    <div className='button-controls'>
+                        <button 
+                            onClick={prev}
+                            disabled={isAnimating}
+                        >
+                            <FaAngleLeft />
+                        </button>
+                        <button 
+                            onClick={next}
+                            disabled={isAnimating}
+                        >
+                            <FaAngleRight />
+                        </button>
                     </div>
                 </div>
             </div>

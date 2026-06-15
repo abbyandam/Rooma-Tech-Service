@@ -12,6 +12,10 @@
     .images {
         width: 100vw;
         height: 60vh;
+        @include mobile {
+            width: 100vw;
+            height: 60vh;
+        }
         position: relative;
         overflow: hidden;
         box-shadow: $shadow-top-light;
@@ -26,19 +30,34 @@
     }
 
     .image {
+        display: flex;
         width: 100vw;
+
+        @include mobile {
+            flex-direction: column;
+        }
     }
+
 
     img {
         object-fit: cover;
         width: 50vw;
         height: 60vh;
+
+        @include mobile {
+            width: 100vw;
+            height: 30vh;
+        }
         z-index: -1;
     }
 
     .controls {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        @include mobile {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr;
+        }
         align-self: center;
         width: 100%;
         height: 100%;
@@ -69,6 +88,10 @@
             &:hover {
                 filter: brightness(150%);
             }
+
+            @include mobile {
+                display: none;
+            }
         }
 
         h2 {
@@ -84,8 +107,27 @@
         }
     }
 
+    .before h2 {
+        @include mobile {
+            align-self: baseline;
+        }
+    }
+
     .after button:hover {
 
         transform: translateX(4px) scale(1.2);
+    }
+
+    .button-controls {
+        display: none;
+
+        @include mobile {
+            position: absolute;
+            display: flex;
+            width: 100vw;
+            height: 100%;
+            justify-content: space-between;
+            z-index: 1;
+        }
     }
 }
