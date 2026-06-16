@@ -2,7 +2,7 @@ import '../styles/navBar.scss'
 import { Link } from 'react-router-dom'
 import { FaAngleDown } from "react-icons/fa";
 import { services } from "../globals.tsx";
-import type { NavBarProps } from '../types/propTypes.tsx';
+import type { NavBarProps } from '../types/types.tsx';
 import { pages } from '../globals.tsx';
 import { useRef, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';

@@ -5,7 +5,7 @@ import Quote from "./pages/Quote"
 import Reviews from "./pages/Reviews"
 import ServiceArea from "./pages/ServiceArea"
 import Services from "./pages/Services"
-import type { Page } from "./types/propTypes"
+import type { Page } from "./types/types"
 
 // export const services = ['HVAC', 'Electric', 'Plumbing', 'Kitchen Design & Remodeling', 'Bath Design & Remodeling']
 export const services = [
@@ -14,6 +14,18 @@ export const services = [
     { id: 'plumbing', name: 'Plumbing'},
     { id: 'kitchen', name: 'Kitchen'},
     { id: 'bathroom', name: 'Bath'},
+]
+
+export const service_options = [
+    'HVAC', 
+    'Electric', 
+    "Plumbing", 
+    'Kitchen Design', 
+    'Kitchen Remodel', 
+    'Bathroom Design', 
+    'Bathroom Remodel',
+    'Phone Troubleshooting',
+    'Other, Please describe in message' 
 ]
 
 export const pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 

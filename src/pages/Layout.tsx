@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useSearchParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import type { NavBarProps } from "../types/propTypes";
+import type { NavBarProps } from "../types/types";
 import { useEffect } from "react";
 
 export default function Layout({current_page} : NavBarProps) {
