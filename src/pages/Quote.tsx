@@ -26,7 +26,7 @@ export default function Quote() {
         if (response.ok) {
             console.log(`SUCCESS: ${await response.json()}`)
         } else {
-            console.error(`ERROR: ${await response.json()}`)
+            console.error('ERROR:', await response.json())
         }
     }
 
