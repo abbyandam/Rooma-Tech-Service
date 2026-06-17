@@ -18,7 +18,7 @@ export default function Quote() {
             formData.append(key, value)
         })
 
-        const response = await fetch('/api/contact.ts', {
+        const response = await fetch('/api/formSubmission', {
             method: 'POST',
             body: formData
         })

@@ -48,6 +48,10 @@
             color: $color-tertiary;
             transform: scale(1.4);
         }
+
+        p {
+            font-size: $font-size-md
+        }
     }
 
     .buttons {

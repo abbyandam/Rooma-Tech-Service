@@ -1,7 +1,8 @@
 import { defineNitroConfig } from 'nitro/config';
  
 export default defineNitroConfig({
-  runtimeConfig: {
-    brevoApiKey: ''
-  },
+    serverDir: './',
+    runtimeConfig: {
+        brevoApiKey: ''
+    }
 });
