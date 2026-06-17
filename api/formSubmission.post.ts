@@ -15,18 +15,13 @@ export default defineHandler(async (event) => {
 
     
     const response = await client.transactionalEmails.sendTransacEmail({
-        htmlContent: "<html><head></head><body><p>Hello,</p>This is my first transactional email sent from Brevo.</p></body></html>",
-        sender: {
-            email: "abbyandam@gmail.com",
-            name: "Abby Andam from Rooma Tech",
-        },
-        subject: "Hello Abby!",
         to: [
             {
                 email: email,
                 name: name,
             },
         ],
+        templateId: 1,
     });
 
     return response;
