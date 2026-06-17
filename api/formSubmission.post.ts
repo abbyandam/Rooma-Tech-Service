@@ -36,6 +36,7 @@ export default defineHandler(async (event) => {
         to: [
             {
                 email: useRuntimeConfig().email,
+                name: "Quote Form"
             },
         ],
         templateId: 2,
