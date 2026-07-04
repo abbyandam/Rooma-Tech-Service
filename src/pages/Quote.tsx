@@ -1,10 +1,10 @@
 import { contact_info, hours } from "../globals";
 import '../styles/quote.scss'
-import { FaPlus, FaPlusCircle, FaTimes, FaUpload } from "react-icons/fa";
+import { FaPlusCircle, FaTimes } from "react-icons/fa";
 import { useForm, type SubmitHandler } from "react-hook-form"
 import { service_options } from "../globals";
 import { FaAngleDown } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { FormInputs } from "../types/types";
 
 export default function Quote() {
@@ -23,7 +23,14 @@ export default function Quote() {
         const formData = new FormData()
   
         Object.entries(data).forEach(([key, value]) => {
-            formData.append(key, value)
+            if (key === 'photos') {
+                Array.from(value as FileList).forEach((file) => {
+                    formData.append('photos', file)
+                })
+            } else {
+                formData.append(key, value)
+            }
+
         })
 
         const response = await fetch('/api/formSubmission', {
@@ -57,14 +64,22 @@ export default function Quote() {
     const photos = watch('photos');
     const [prevPhotos, setPrevPhotos] = useState<FileList>((new DataTransfer()).files);
     const maxPhotosSize = 10 * 1024 * 1024 // 10 MB
+    const maxPhotoSize = 4 * 1024 * 1024
     const maxPhotos = 5
     const validateUpload = (files?: FileList) => {
         if (!files) { return true }
-        // Validate Size
+        // Validate Total Size
         const size = [...files].reduce((size, file) => size + file.size, 0)
         if (size > maxPhotosSize) {
             setValue('photos', prevPhotos)
             return "Photos exceed 10 MB limit"
+        }
+        
+        // Validate Individual Size
+        const largeFiles = [...files].filter((file) => file.size > maxPhotoSize)
+        if (largeFiles.length > 0) {
+            setValue('photos', prevPhotos)
+            return "File too large — max size is 4MB per photo"
         }
 
         // Validate # of Photos

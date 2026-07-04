@@ -3,7 +3,6 @@ import { BrevoClient } from "@getbrevo/brevo";
 import { useRuntimeConfig } from 'nitro/runtime-config';
 
 export default defineHandler(async (event) => {
-    console.log("hi");
     const formData = await event.req.formData()
 
     const name = formData.get('name') as string
@@ -15,6 +14,15 @@ export default defineHandler(async (event) => {
     const zipcode = formData.get('zipcode') as string
     const service = formData.get('service') as string
     const message = formData.get('message') as string
+    const photos = formData.getAll('photos') as File[]
+
+    const attachments = await Promise.all(photos.map(async (file) => {
+        console.log(file.constructor.name, file instanceof File, file instanceof Blob);
+        return {
+            name: file.name,
+            content: Buffer.from(await file.arrayBuffer()).toString('base64')
+        }
+    }))
 
     const client = new BrevoClient({
         apiKey: useRuntimeConfig().brevoApiKey,
@@ -50,7 +58,8 @@ export default defineHandler(async (event) => {
             "ZIPCODE": zipcode,
             "SERVICE": service,
             "MESSAGE": message
-        }
+        },
+        attachment: attachments
     });
 
     return {client_response: client_response, business_response: business_response};
