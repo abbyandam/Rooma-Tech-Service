@@ -20,5 +20,5 @@ export interface FormInputs {
     zipcode: number,
     service: string,
     message: string,
-    photos?: Blob[]
+    photos: FileList
 }

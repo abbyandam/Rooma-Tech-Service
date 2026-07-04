@@ -141,19 +141,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
-  min-height: 100vh;
   overscroll-behavior: none;
 }
 
-#root {
-  min-height: 100vh;
-}
+// #root {
+//   min-height: 100vh;
+// }
 
 main {
   margin-top: var(--navbar-height);
   box-shadow: $shadow-bottom;
   position: relative;
   z-index: 1;
+  min-height: calc(100vh - var(--navbar-height));
+  // height: fit-content;
 }
 
 div {
@@ -292,5 +293,5 @@ p {
 span.big { font-size: $font-size-xl; @include mobile { font-size: $font-size-lg;}}
 span.bold { font-weight: $font-weight-bold;}
 span.underline { text-decoration: underline; }
-span.italic { font-style: italic; }
+.italic { font-style: italic; }
 span.tertiary { color: $color-tertiary; }
