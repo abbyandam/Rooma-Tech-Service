@@ -17,6 +17,7 @@
     "react-dom": "^19.2.6",
     "react-hook-form": "^7.79.0",
     "react-icons": "^5.6.0",
+    "react-loading-indicators": "^1.0.1",
     "react-router-dom": "^7.17.0",
     "sass": "^1.100.0"
   },
@@ -30,10 +31,10 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
+    "nitro": "latest",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12",
-    "nitro": "latest"
+    "vite": "^8.0.12"
   },
   "allowScripts": {
     "@parcel/watcher@2.5.6": true,

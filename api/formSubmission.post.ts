@@ -16,13 +16,31 @@ export default defineHandler(async (event) => {
     const message = formData.get('message') as string
     const photos = formData.getAll('photos') as File[]
 
+    // Bot detection
+    // Honeypot
+    const honeypot = formData.get('website')
+    if (honeypot) {
+        return new Response(null, { status: 200 }) // pretend success, don't process
+    }
+
+    // Time trap
+    const formLoadTime = Number(formData.get('formLoadTime'))
+    const elapsed = Date.now() - formLoadTime
+
+    if (!formLoadTime || elapsed < 2000) {
+        return new Response(JSON.stringify({ error: 'Please try again' }), {
+            status: 400
+        })
+    }
+
+
     const attachments = await Promise.all(photos.map(async (file) => {
-        console.log(file.constructor.name, file instanceof File, file instanceof Blob);
         return {
             name: file.name,
             content: Buffer.from(await file.arrayBuffer()).toString('base64')
         }
     }))
+
 
     const client = new BrevoClient({
         apiKey: useRuntimeConfig().brevoApiKey,
@@ -59,7 +77,7 @@ export default defineHandler(async (event) => {
             "SERVICE": service,
             "MESSAGE": message
         },
-        attachment: attachments
+        ...(attachments.length > 0 && { attachment: attachments })
     });
 
     return {client_response: client_response, business_response: business_response};

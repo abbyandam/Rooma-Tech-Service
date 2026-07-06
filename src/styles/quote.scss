@@ -199,4 +199,32 @@
 
 
     }
+
+    .loading {
+        background: $color-background-surface;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .submission {
+        background: $color-background-surface;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        height: 100%;
+        justify-content: center;
+        gap: 5em;
+        @include mobile { gap: 2em; }
+        align-items: center;
+
+        p {
+            font-size: $font-size-md;
+            text-align: center;
+            max-width: 40ch;
+
+            @include mobile {
+                font-size: $font-size-sm;
+            }
+        }
+    }
 }

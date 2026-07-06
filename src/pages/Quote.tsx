@@ -6,8 +6,12 @@ import { service_options } from "../globals";
 import { FaAngleDown } from "react-icons/fa";
 import { useRef, useState } from "react";
 import type { FormInputs } from "../types/types";
+import { OrbitProgress } from "react-loading-indicators"
 
 export default function Quote() {
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [formLoadTime] = useState(Date.now())
     const { 
         register, 
         handleSubmit, 
@@ -19,32 +23,41 @@ export default function Quote() {
         } = useForm<FormInputs>({mode: 'onSubmit', defaultValues: {service: ''}});
     
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-        console.log(data)
-        const formData = new FormData()
-  
-        Object.entries(data).forEach(([key, value]) => {
-            if (key === 'photos') {
-                Array.from(value as FileList).forEach((file) => {
-                    formData.append('photos', file)
-                })
+        setIsLoading(true)
+        try {
+            const formData = new FormData()
+    
+            Object.entries(data).forEach(([key, value]) => {
+                if (key === 'photos') {
+                    Array.from(value as FileList).forEach((file) => {
+                        formData.append('photos', file)
+                    })
+                } else {
+                    formData.append(key, value)
+                }
+    
+            })
+
+            formData.append('formLoadTime', formLoadTime.toString())
+    
+            const response = await fetch('/api/formSubmission', {
+                method: 'POST',
+                body: formData
+            })
+    
+            if (response.ok) {
+                setIsSubmitted(true)
             } else {
-                formData.append(key, value)
+                console.error('ERROR:', await response.json())
             }
-
-        })
-
-        const response = await fetch('/api/formSubmission', {
-            method: 'POST',
-            body: formData
-        })
-
-        if (response.ok) {
-            console.log('SUCCESS:', await response.json())
-        } else {
-            console.error('ERROR:', await response.json())
+        } catch(err) {
+            console.error('NETWORK ERROR:', err)
+        } finally {
+            setIsLoading(false)
         }
     }
 
+    // Input formatting
     const formatPhone = (phone: string) => {
         const digits = phone.replace(/\D/g, '').slice(0, 10)
         if (digits.length <= 3) return digits
@@ -127,7 +140,25 @@ export default function Quote() {
                 <p><span className="bold">Location</span>: {contact_info.location}</p>
                 <p><span className="bold">Hours</span>: {hours.open_days} {hours.open_hours}</p>
             </div>
+            { isLoading ?
+            <div className="loading">
+                <OrbitProgress 
+                    variant="spokes" 
+                    speedPlus={1} 
+                    easing="linear" 
+                    color={"#932833"}
+                    size="small"
+                />
+            </div>
+            : !isSubmitted ?
             <form onSubmit={handleSubmit(onSubmit)}>
+                <input
+                    type="text"
+                    {...register('website')}
+                    style={{ position: 'absolute', left: '-9999px' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                />
                 <div>
                     <input 
                         placeholder={errors.name ? 'Name *' : 'Name'}
@@ -270,6 +301,18 @@ export default function Quote() {
                     <h4>Submit Request</h4>
                 </button>
             </form>
+            : <div className="submission">
+                <p>
+                    <span className="bold">Your response has been received. </span>
+                    I will be in contact with you shortly.
+                </p>
+                <p>
+                    If you’d like to 
+                    <span className="bold"> book an appointment </span>
+                    please call or email.
+                </p>
+            </div>
+            }
         </div>
     )
 }
