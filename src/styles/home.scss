@@ -30,7 +30,7 @@
         flex-direction: column;
         width: 100%;
         color: $color-background;
-        gap: 1em;
+        gap: 0.5em;
 
         div {
             @include flex-center;

@@ -3,6 +3,7 @@
 .about-us {
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     h4 {
         font-size: $font-size-lg;
@@ -75,6 +76,7 @@
     box-shadow: $shadow-top-light;
     z-index: 1;
     position: relative;
+    flex: 1;
 
     .content {
         display: grid;

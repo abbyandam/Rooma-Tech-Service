@@ -43,6 +43,10 @@
             width: 100%;
             display: flex;
             gap: 1em;
+
+            @include mobile {
+                gap: 0.5em;
+            }
         }
 
         input, select, textarea, .photos {
