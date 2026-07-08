@@ -13,7 +13,7 @@ export default function Home() {
                 <FaTools />
                 <p><span className='big bold italic tertiary'>Solutions are my specialty</span></p> 
             </div>
-            <p><span className='bold'>HVAC・Electric・Plumbing・Kitchen・Bathroom</span></p>
+        <p><span className='bold'>HVAC・Electric・Plumbing・Kitchen・Bathroom</span></p>
         </div>
         <div className='buttons'>
             <Link to={'/quote'} className='primary-button'><h2>Request a Quote</h2></Link>

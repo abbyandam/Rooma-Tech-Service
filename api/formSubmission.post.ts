@@ -7,26 +7,79 @@ export default defineHandler(async (event) => {
 
     const name = formData.get('name') as string
     const email = formData.get('email') as string
+    const phone = formData.get('phone') as string
+    const address = formData.get('address') as string
+    const city = formData.get('city') as string
+    const state = formData.get('state') as string
+    const zipcode = formData.get('zipcode') as string
+    const service = formData.get('service') as string
+    const message = formData.get('message') as string
+    const photos = formData.getAll('photos') as File[]
+
+    // Bot detection
+    // Honeypot
+    const honeypot = formData.get('website')
+    if (honeypot) {
+        return new Response(null, { status: 200 }) // pretend success, don't process
+    }
+
+    // Time trap
+    const formLoadTime = Number(formData.get('formLoadTime'))
+    const elapsed = Date.now() - formLoadTime
+
+    if (!formLoadTime || elapsed < 2000) {
+        return new Response(JSON.stringify({ error: 'Please try again' }), {
+            status: 400
+        })
+    }
+
+
+    const attachments = await Promise.all(photos.map(async (file) => {
+        return {
+            name: file.name,
+            content: Buffer.from(await file.arrayBuffer()).toString('base64')
+        }
+    }))
+
 
     const client = new BrevoClient({
         apiKey: useRuntimeConfig().brevoApiKey,
     });
-    
-    const response = await client.transactionalEmails.sendTransacEmail({
-        htmlContent: "<html><head></head><body><p>Hello,</p>This is my first transactional email sent from Brevo.</p></body></html>",
-        sender: {
-            email: "abbyandam@gmail.com",
-            name: "Abby Andam from Rooma Tech",
-        },
-        subject: "Hello Abby!",
+
+    // send email to client confirming form submission
+    const client_response = await client.transactionalEmails.sendTransacEmail({
         to: [
             {
                 email: email,
                 name: name,
             },
         ],
+        templateId: 1,
     });
 
-    return response;
+    // send email to business alerting new submission
+    const business_response = await client.transactionalEmails.sendTransacEmail({
+        to: [
+            {
+                email: useRuntimeConfig().email,
+                name: "Quote Form"
+            },
+        ],
+        templateId: 2,
+        params: {
+            "NAME": name,
+            "PHONE": phone,
+            "EMAIL": email,
+            "ADDRESS": address,
+            "CITY": city,
+            "STATE": state,
+            "ZIPCODE": zipcode,
+            "SERVICE": service,
+            "MESSAGE": message
+        },
+        ...(attachments.length > 0 && { attachment: attachments })
+    });
+
+    return {client_response: client_response, business_response: business_response};
 })
 

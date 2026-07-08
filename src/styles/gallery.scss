@@ -4,17 +4,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
 
     h2 {
-        margin-inline: 1em;
+        margin-inline: 0.25em;
     }
 
     .images {
         width: 100vw;
-        height: 60vh;
+        height: 85%;
         @include mobile {
             width: 100vw;
-            height: 60vh;
+            height: 100%;
         }
         position: relative;
         overflow: hidden;
@@ -24,7 +25,7 @@
     .carousel {
         position: absolute;
         display: flex;
-        height: fit-content;
+        height: 100%;
         width: fit-content;
         overflow: hidden;
     }
@@ -32,6 +33,7 @@
     .image {
         display: flex;
         width: 100vw;
+        height: 100%;
 
         @include mobile {
             flex-direction: column;
@@ -42,11 +44,11 @@
     img {
         object-fit: cover;
         width: 50vw;
-        height: 60vh;
+        height: 100%;
 
         @include mobile {
             width: 100vw;
-            height: 30vh;
+            height: 50%;
         }
         z-index: -1;
     }
@@ -76,6 +78,7 @@
     .before, .after {
         justify-content: end;
         position: relative;
+        height: 100%;
 
         button, h2 {
             position: absolute;
@@ -128,6 +131,7 @@
             height: 100%;
             justify-content: space-between;
             z-index: 1;
+            align-items: center;
         }
     }
 }

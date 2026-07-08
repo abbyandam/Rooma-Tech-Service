@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../styles/services.scss'
 
-export default function Services() {
+interface  ServicesProps {
+    isLandingPageFormat?: boolean
+}
+
+export default function Services({isLandingPageFormat} : ServicesProps) {
     return (
-        <div className="services">
+        <div className={isLandingPageFormat ? "services landing" : "services"}>
             <div className='title'>
                 <h2>Services</h2>
                 <h4>Commercial & Residential</h4>
@@ -40,7 +44,9 @@ export default function Services() {
                     <p>Call and we'll walk you through a repair for free</p>
                 </div>
             </div>
-            <Link to={'/quote'} className='secondary-button'><h3>Request a Quote</h3></Link>
+            {!isLandingPageFormat &&
+                <Link to={'/quote'} className='secondary-button'><h3>Request a Quote</h3></Link>
+            }
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import Carousel from "./components/Carousel"
 import AboutUs from "./pages/AboutUs"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
@@ -28,13 +29,17 @@ export const service_options = [
     'Other, Please describe in message' 
 ]
 
-export const pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 
-                      {page: 'About Us', link: '/about-us', element: <AboutUs />}, 
-                      {page: 'Services', link: '/services', element: <Services />},
-                      {page: 'Service Area', link: '/service-area', element: <ServiceArea />},
-                      {page: 'Gallery', link: '/gallery', element: <Gallery />},
-                      {page: 'Reviews', link: '/reviews', element: <Reviews />},
-                      {page: 'Get a Quote', link: '/quote', element: <Quote />}]
+export const base_pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 
+    {page: 'About Us', link: '/about-us', element: <AboutUs />}, 
+    {page: 'Services', link: '/services', element: <Services />},
+    {page: 'Service Area', link: '/service-area', element: <ServiceArea />},
+    {page: 'Gallery', link: '/gallery', element: <Gallery />},
+    {page: 'Reviews', link: '/reviews', element: <Reviews />},
+    {page: 'Get a Quote', link: '/quote', element: <Quote />}]
+    
+const HomePage = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Reviews />]} />
+
+export const pages: Page[] = [{page: 'Home', link: '/', element: HomePage}, ...base_pages.splice(1)]
 
 export const footer_text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
 

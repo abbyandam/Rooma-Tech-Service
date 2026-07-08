@@ -1,0 +1,4 @@
+{
+  "devCommand": "vite dev",
+  "buildCommand": "vite build"
+}
