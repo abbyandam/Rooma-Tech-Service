@@ -304,7 +304,7 @@ export default function Quote() {
             : <div className="submission">
                 <p>
                     <span className="bold">Your response has been received. </span>
-                    I will be in contact with you shortly.
+                    We'll be in contact with you shortly.
                 </p>
                 <p>
                     If you’d like to 
