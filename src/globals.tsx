@@ -42,6 +42,8 @@ export const pages: Page[] = [{page: 'Home', link: '/', element: HomePage}, ...b
 
 export const footer_text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.'
 
+export const license = "HIC License PA#I42602"
+
 export const contact_info = {
     phone: import.meta.env.VITE_PHONE_NUMBER,
     email: import.meta.env.VITE_EMAIL,

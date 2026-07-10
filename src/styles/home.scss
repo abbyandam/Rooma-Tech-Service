@@ -93,6 +93,7 @@
     }   
 
     h3 {
+        align-self: center;
         @include mobile {
             font-size: $font-size-sm;
         }   
@@ -101,5 +102,15 @@
     hr {
         border: solid $color-tertiary 1px;
         border-radius: 999px;
+    }
+
+    .licensed {
+        @include flex-center;
+        flex-direction: column;
+
+        h5 {
+            color: $color-text-muted;
+            font-style: italic;
+        }
     }
 }

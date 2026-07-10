@@ -1,6 +1,7 @@
 import '../styles/home.scss'
 import { FaPhoneAlt, FaTools, FaRegArrowAltCircleRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { license } from '../globals';
 
 export default function Home() {
     return (
@@ -26,7 +27,10 @@ export default function Home() {
         <div className='qualifications'>
             <h3><span>7+ Years in Business</span></h3>
             <hr/>
-            <h3><span>Licensed & Certified</span></h3>
+            <div className='licensed'>
+                <h3><span>Licensed & Certified</span></h3>
+                <h5>{license}</h5>
+            </div>
             <hr/>
             <h3><span>11+ Cities Served</span></h3>
         </div>
