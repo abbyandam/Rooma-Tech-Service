@@ -13,8 +13,9 @@ export default function Reviews() {
             <ol>
                 {reviews.map((review, i) => (
                     <div className="review" key={i}>
+                        <h6>{review.title}</h6>
                         <p>"{review.content}"</p>
-                        <h6>-  {review.user}</h6>
+                        <h6 className="user"><span className="primary">- {review.user}</span></h6>
                     </div>
                 ))}
             </ol>

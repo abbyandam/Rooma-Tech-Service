@@ -294,4 +294,5 @@ span.big { font-size: $font-size-xl; @include mobile { font-size: $font-size-lg;
 span.bold { font-weight: $font-weight-bold;}
 span.underline { text-decoration: underline; }
 .italic { font-style: italic; }
+span.primary { color: $color-primary; }
 span.tertiary { color: $color-tertiary; }

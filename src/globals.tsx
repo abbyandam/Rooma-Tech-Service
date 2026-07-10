@@ -58,10 +58,53 @@ export const aboutUs = "Rooma Tech Service is a small team based in Lancaster, P
 
 export const cities = ['Lancaster', 'Lititz', 'New Holland', 'Reading', 'Mt Joy', 'Middletown', 'West Chester', 'York', 'Lebanon', 'Harrisburg', 'Elizabethtown']
 
+// export const reviews = [
+//     { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+//     { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+//     { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+//     { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+//     { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+// ]
+
 export const reviews = [
-    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
-    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
-    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
-    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
-    { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", user: "John Smith" },
+  {
+    "title": "Light Fixture Installation",
+    "content": "Romany did an excellent job replacing two old fluorescent fixtures with LED fixtures. He is very knowledgeable, explains things well, and is respectful of property. He also was able to do my job quickly. He is not cheap, but he does quality work.",
+    "user": "Loretta Minear"
+  },
+  {
+    "title": "Gas Line Installation",
+    "content": "He was pleasant and serviced me quickly, and gave me instructions. I would recommend him.",
+    "user": "Linda Jumper"
+  },
+  {
+    "title": "Faucet Repair",
+    "content": "Efficient, friendly, and professional.",
+    "user": "Chris Kirman"
+  },
+  {
+    "title": "Ceiling Fan Repair",
+    "content": "Great experience. Will definitely use again.",
+    "user": "Kenneth Duke"
+  },
+  {
+    "title": "Gas Fireplace Install/Conversion",
+    "content": "Pro was very professional, was on time and did an excellent job. I would totally recommend this pro.",
+    "user": "Pro Referral Customer"
+  },
+  {
+    "title": "Light Fixture Repair",
+    "content": "Pro responded quickly and scheduled a mutual time to repair my light.",
+    "user": "Pro Referral Customer"
+  },
+  {
+    "title": "Bathroom Fan Repair",
+    "content": "Excellent experience ... easy communication, quick response, great clean-up.",
+    "user": "Elaine Farley"
+  },
+  {
+    "title": "Exterior Lighting Replacement",
+    "content": "Good overall.",
+    "user": "Charles Raymond"
+  },
 ]
