@@ -5,15 +5,15 @@ export default function AboutUs() {
     return (
         <div className="about-us">
             <div className="about-us-content">
-                    <div className="text">
-                        <h2>About Us</h2>
-                        <h4>Family Owned & Operated since 2019</h4>
-                        <img src='/about_us_portrait.png'></img>
-                        <p>{aboutUs}</p>
-                    </div>
-                    <div className="portrait">
-                        <img src='/about_us_portrait.png'></img>
-                    </div>
+                <div className="text">
+                    <h2>About Us</h2>
+                    <h4>Family Owned & Operated since 2019</h4>
+                    <img src='/about_us_portrait.png'></img>
+                    <p>{aboutUs}</p>
+                </div>
+                <div className="portrait">
+                    <img src='/about_us_portrait.png' width={"100px"} height={"100px"}></img>
+                </div>
             </div>
             <div className="why-us">
                 <h4>Why Choose Rooma Tech Service?</h4>
