@@ -15,4 +15,47 @@
     .page > * {
         width: 100%;
     }
+
+    .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-self: center;
+        width: 100%;
+        color: $color-background;
+        align-items: center;
+        opacity: 0.6;
+        z-index: 1;
+        pointer-events: none;
+        
+        button {
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            transition: $transition-fast;
+            pointer-events: auto;
+        }
+
+        button.left {
+            justify-self: baseline;
+            &:hover {
+                transform: translateX(-4px) scale(1.2);
+                filter: brightness(150%);
+            }
+        }
+        button.right {
+            justify-self: end;
+            &:hover {
+                transform: translateX(4px) scale(1.2);
+                filter: brightness(150%);
+            }
+        }
+
+        svg {
+            color: $color-background;
+            height: 4em;
+            width: auto;
+            filter: drop-shadow($shadow-diagonal);
+        }
+    }
 }

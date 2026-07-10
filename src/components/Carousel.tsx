@@ -81,7 +81,6 @@ export default function Carousel( {pages} : CarouselProps ) {
                 { pagesExt.map((page, i) => <React.Fragment key={i}>{page}</React.Fragment>) }
             </div>
             <div className='controls'> 
-                {/* Desktop Only */}
                 <button 
                     onClick={prev}
                     disabled={isAnimating}
@@ -96,21 +95,6 @@ export default function Carousel( {pages} : CarouselProps ) {
                 >
                     <FaAngleRight />
                 </button>
-                {/* Mobile Only */}
-                {/* <div className='button-controls'>
-                    <button 
-                        onClick={prev}
-                        disabled={isAnimating}
-                    >
-                        <FaAngleLeft />
-                    </button>
-                    <button 
-                        onClick={next}
-                        disabled={isAnimating}
-                    >
-                        <FaAngleRight />
-                    </button>
-                </div> */}
             </div>
         </div>
     )
