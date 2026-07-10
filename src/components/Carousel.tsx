@@ -66,7 +66,7 @@ export default function Carousel( {pages} : CarouselProps ) {
     useEffect(() => {
         const interval = setInterval(() => {
             next()
-        }, 10000)
+        }, 15000)
 
         return () => clearInterval(interval)
     }, [next])

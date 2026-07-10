@@ -7,5 +7,5 @@ export default defineConfig({
   plugins: [react(), nitro()],
   build: {
     sourcemap: true
-  },
+  }
 })
