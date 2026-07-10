@@ -1,4 +1,4 @@
-import Slideshow from "./components/SlideShow"
+import Slideshow from "./components/Slideshow.tsx"
 import AboutUs from "./pages/AboutUs"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
@@ -8,7 +8,6 @@ import ServiceArea from "./pages/ServiceArea"
 import Services from "./pages/Services"
 import type { Page } from "./types/types"
 
-// export const services = ['HVAC', 'Electric', 'Plumbing', 'Kitchen Design & Remodeling', 'Bath Design & Remodeling']
 export const services = [
     { id: 'hvac', name: 'HVAC'},
     { id: 'electric', name: 'Electric'},
