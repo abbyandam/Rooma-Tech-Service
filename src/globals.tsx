@@ -1,5 +1,4 @@
-import Carousel from "./components/Carousel"
-import { Slideshow } from "./components/SlideShow"
+import Slideshow from "./components/SlideShow"
 import AboutUs from "./pages/AboutUs"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"

@@ -5,7 +5,7 @@ interface SlideshowProps {
     pages: React.JSX.Element[]
 }
 
-export function Slideshow({ pages } : SlideshowProps) {
+export default function Slideshow({ pages } : SlideshowProps) {
     const [curIdx, setCurIdx] = useState(0)
 
     const next = () => {
