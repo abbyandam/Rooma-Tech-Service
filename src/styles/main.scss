@@ -58,11 +58,12 @@ $border-width: 1px;
 
 // Shadows
 $shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
-$shadow-bottom: 0px 4px 4px rgba(0, 0, 0, 0.25);
-$shadow-top: 0px -4px 4px rgba(0, 0, 0, 0.25);
-$shadow-bottom-light: 0px 2px 4px rgba(0, 0, 0, 0.25);
-$shadow-top-light: 0px -2px 4px rgba(0, 0, 0, 0.25);
+$shadow-bottom: 0px 4px 4px -4px rgba(0, 0, 0, 0.25);
+$shadow-top: 0px -4px 4px -4px rgba(0, 0, 0, 0.25);
+$shadow-bottom-light: 0px 2px 4px -4px rgba(0, 0, 0, 0.25);
+$shadow-top-light: 0px -2px 4px -4px rgba(0, 0, 0, 0.25);
 $shadow-diagonal: 2px 2px 4px rgba(0, 0, 0, 0.25);
+$shadow-diagonal-light: 1px 1px 2px rgba(0, 0, 0, 0.25);
 
 // Breakpoints
 $breakpoint-mobile: 768px;
@@ -272,8 +273,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 130%;
 }
 
-h1 { font-size: $font-size-3xl; }
-h2 { font-size: $font-size-2xl; }
+h1 { font-size: min($font-size-3xl, 15vw); }
+h2 { font-size: min($font-size-2xl, 10vw); }
 h3 { font-size: $font-size-xl; }
 h4 { font-size: $font-size-lg; }
 h5 { font-size: $font-size-md; }

@@ -30,19 +30,27 @@ export const service_options = [
     'Other, Please describe in message' 
 ]
 
+const versions = {
+  service_area: 'v2' as const
+}
+
 export const base_pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 
     {page: 'About Us', link: '/about-us', element: <AboutUs />}, 
     {page: 'Services', link: '/services', element: <Services />},
-    {page: 'Service Area', link: '/service-area', element: <ServiceArea />},
+    {page: 'Service Area', link: '/service-area', element: <ServiceArea version={versions.service_area}/>},
     {page: 'Gallery', link: '/gallery', element: <Gallery />},
     {page: 'Reviews', link: '/reviews', element: <Reviews />},
     {page: 'Get a Quote', link: '/quote', element: <Quote />}]
     
-const HomePageSlideshow = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Reviews />]} />
-const HomePageStack = <Stack pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Gallery />, <Reviews />, <Quote />]} />
-const HomePageCarousel = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Reviews />]} />
 
-export const pages: Page[] = [{page: 'Home', link: '/', element: HomePageStack}, ...base_pages.splice(1)]
+// Home page display options. Note: Not every layout has been tested for mobile
+const HomePageStack = <Stack pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Gallery />, <Reviews />, <Quote />]} />
+const HomePageSlideshow = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
+const HomePageCarousel = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
+
+const HomePage = HomePageStack
+
+export const pages: Page[] = [{page: 'Home', link: '/', element: HomePage}, ...base_pages.splice(1)]
 
 export const footer_text = 'A small team based in Lancaster, PA, providing  services since 2009'
 

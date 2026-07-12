@@ -18,7 +18,12 @@
         min-height: calc((100vh - var(--navbar-height)));
     }
 
+    > .service-area {
+        width: 100% !important; 
+        justify-items: center;
+    }
+
     > .gallery {
-        min-height: calc((100vh - var(--navbar-height)) * 0.75);
+        height: calc((100vh - var(--navbar-height)) * 0.85);
     }
 }

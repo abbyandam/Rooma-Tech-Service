@@ -1,6 +1,6 @@
 @use "../styles/main.scss" as *;
 
-.service-area {
+.service-area.v1 {
     @include flex-center;
     flex-direction: column;
     position: relative;
@@ -32,5 +32,105 @@
 
     p {
         text-align: center;
+    }
+}
+
+.service-area.v2 {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    
+    @include mobile {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2px 1fr;
+        row-gap: 1em;
+        justify-items: center;
+    }
+
+    margin-inline: auto;
+    padding-block: 6em;
+    column-gap: 2px;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 4em;
+        @include mobile {
+            padding-inline: 2em;
+        }
+        height: fit-content;
+        gap: 1em;
+    }
+
+    .headers {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cities {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.75em;
+        margin-block: 1em;
+        column-gap: min(3em, 5vw);
+        width: fit-content;
+
+        p {
+            font-weight: 600;
+            background: $color-background-surface;
+            width: fit-content;
+            padding: 0.1em 1em;
+            border-radius: $border-radius-sm;
+            box-shadow: $shadow-diagonal-light;
+            font-size: min($font-size-sm, 3.75vw);
+            align-self: center;
+        }
+    }
+
+    h2 {
+        color: $color-primary;
+        text-decoration: underline;
+    }
+
+    .not-in-our-area {
+        display: flex;
+        flex-direction: column;
+
+        .bold {
+            font-weight: $font-weight-bold;
+        }
+
+        p {
+            font-size: $font-size-md;
+            color: $color-text-muted;
+        }
+    }
+
+    hr {
+        height: 100%;
+        border: solid 1px $color-background-surface;
+        border-radius: $border-radius-lg;
+
+        @include mobile {
+            width: 85%;
+            justify-self: center;
+        }
+    }
+
+    .image {
+        height: 100%;
+        margin-inline: 2em;
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        object-fit: cover;
+        height: 90%;
+        width: auto;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-diagonal;
     }
 }
