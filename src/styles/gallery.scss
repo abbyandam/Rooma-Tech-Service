@@ -7,12 +7,12 @@
     height: 100%;
 
     h2 {
-        margin-inline: 0.25em;
+        margin-inline: 2em;
     }
 
     .images {
         width: 100vw;
-        height: 85%;
+        min-height: 85%;
         @include mobile {
             width: 100vw;
             height: 100%;

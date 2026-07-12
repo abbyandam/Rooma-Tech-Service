@@ -25,7 +25,7 @@
         box-shadow: $shadow-top-light;
 }
 
-.controls {
+.carousel .controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-self: center;
@@ -68,7 +68,7 @@
     }
 }
 
-.button-controls {
+.carousel .button-controls {
     display: none;
 
     @include mobile {

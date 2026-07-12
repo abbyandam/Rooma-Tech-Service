@@ -1,4 +1,6 @@
+import Carousel from "./components/Carousel.tsx"
 import Slideshow from "./components/Slideshow.tsx"
+import Stack from "./components/Stack.tsx"
 import AboutUs from "./pages/AboutUs"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
@@ -36,9 +38,11 @@ export const base_pages: Page[] = [{page: 'Home', link: '/', element: <Home />},
     {page: 'Reviews', link: '/reviews', element: <Reviews />},
     {page: 'Get a Quote', link: '/quote', element: <Quote />}]
     
-const HomePage = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Reviews />]} />
+const HomePageSlideshow = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Reviews />]} />
+const HomePageStack = <Stack pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Gallery />, <Reviews />, <Quote />]} />
+const HomePageCarousel = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea />, <Reviews />]} />
 
-export const pages: Page[] = [{page: 'Home', link: '/', element: HomePage}, ...base_pages.splice(1)]
+export const pages: Page[] = [{page: 'Home', link: '/', element: HomePageStack}, ...base_pages.splice(1)]
 
 export const footer_text = 'A small team based in Lancaster, PA, providing  services since 2009'
 

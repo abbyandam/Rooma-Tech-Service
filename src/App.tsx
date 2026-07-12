@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './pages/Layout'
 import { pages } from './globals'
 
+
 export default function App() {
     return (
         <Routes>
