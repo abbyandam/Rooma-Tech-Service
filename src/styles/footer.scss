@@ -41,6 +41,7 @@
         opacity: 40%;
         filter: contrast(120%);
         mix-blend-mode: multiply;
+        z-index: 0;
 
         &.flip {
             transform: scaleX(-1)
@@ -53,11 +54,11 @@
     align-items: center;
     justify-content: center;
     gap: 5em;
+    z-index: 1;
     @include mobile {
         gap: 1em;
     }
     width: 100%;
-    // z-index: 2;
     margin-bottom: 2em;
 }
 
@@ -98,6 +99,10 @@
     &.footer-services {
         @include mobile {
             display: none;
+        }
+
+        a:hover {
+            filter: brightness(75%);
         }
     }
 

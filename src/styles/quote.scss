@@ -483,6 +483,11 @@
         flex-direction: column;
         padding: 1em;
         height: 100%;
+
+        @include mobile {
+            height: auto;
+        }
+        
         justify-content: center;
         gap: 5em;
         @include mobile { gap: 2em; }

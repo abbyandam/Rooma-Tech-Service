@@ -114,6 +114,7 @@
         h5 {
             color: $color-text-muted;
             font-style: italic;
+            font-size: min($font-size-md, 3vw);;
         }
     }
 }
