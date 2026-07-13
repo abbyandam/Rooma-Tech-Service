@@ -129,20 +129,26 @@ $transition-slow:   400ms ease;
   padding: 0;
 }
 
+html, body {
+  overscroll-behavior: none;
+
+  @include mobile() {
+    overscroll-behavior: auto;
+  }
+}
+
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  overscroll-behavior: none;
 }
 
 body {
   font-family: $font-family-body;
   color: $color-text;
-  background-color: $color-background;
+  background-color: $color-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
-  overscroll-behavior: none;
 }
 
 // #root {
