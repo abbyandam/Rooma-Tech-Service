@@ -249,6 +249,10 @@
         background-position: center;
         z-index: -1;
         filter: brightness(35%);
+
+        @include mobile {
+            background-attachment: scroll;
+        }
     }
 
     img {
