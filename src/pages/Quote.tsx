@@ -325,7 +325,6 @@ export default function Quote({version}: QuoteProps) {
     if (version === 'v2') {
         return (
             <div className="quote v2">
-                <img src="/quote_background.jpg" alt="bathroom"/>
                 <div className="contact">
                     <h1>Contact Us</h1>
                     <div className="gap"/>

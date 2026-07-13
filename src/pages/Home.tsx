@@ -6,7 +6,7 @@ import { license } from '../globals';
 export default function Home() {
     return (
     <div className='home'>
-        <img src='home_image.jpg' className='background-img'/>
+        {/* <img src='home_image.jpg' className='background-img'/> */}
         <div className='home-text'>
             <p><span className='big bold underline'>Commercial & Residential</span></p>
             <h1>Home Improvement Services</h1>

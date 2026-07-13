@@ -239,6 +239,18 @@
         grid-template-rows: fit-content 1fr;
     }
 
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("quote_background.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        filter: brightness(35%);
+    }
+
     img {
         position: absolute;
         height: 100%;
