@@ -395,7 +395,10 @@
         select, textarea {
             appearance: none;
             -webkit-appearance: none;
+            color: inherit;
             resize: none;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
         }
 
         .select-wrapper {

@@ -1,6 +1,7 @@
-// import Carousel from "./components/Carousel.tsx"
-// import Slideshow from "./components/Slideshow.tsx"
+import Carousel from "./components/Carousel.tsx"
+import Slideshow from "./components/Slideshow.tsx"
 import Stack from "./components/Stack.tsx"
+import useIsMobile from "./hooks/useIsMobile.tsx"
 import AboutUs from "./pages/AboutUs"
 import Gallery from "./pages/Gallery"
 import Home from "./pages/Home"
@@ -44,22 +45,46 @@ export const base_pages: Page[] = [{page: 'Home', link: '/', element: <Home />},
     {page: 'Get a Quote', link: '/quote', element: <Quote version={versions.quote}/>}]
     
 
-// Home page display options. Note: Not every layout has been tested for mobile
-const HomePageStack = <Stack pages={
-  [
-    <Home />, 
-    <AboutUs />, 
-    <Services isLandingPageFormat={true}/>, 
-    <ServiceArea version={versions.service_area}/>, 
-    <Gallery />, <Reviews />, 
-    <Quote version={versions.quote}/>
-  ]} />
-// const HomePageSlideshow = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
-// const HomePageCarousel = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
+    
+function HomePage() { 
+  const isMobile = useIsMobile();
+  
+  // Home page display options. Note: Not every layout has been tested for mobile
+  const HomePageStack = <Stack pages={
+    [
+      <Home />, 
+      <AboutUs />, 
+      <Services isLandingPageFormat={true}/>, 
+      <ServiceArea version={versions.service_area}/>, 
+      <Gallery />, <Reviews />, 
+      <Quote version={versions.quote}/>
+    ]
+  } />
+  
+  const HomePageSlideshow = <Slideshow pages={
+    [
+      <Home />, 
+      <AboutUs />, 
+      <Services isLandingPageFormat={true}/>, 
+      <ServiceArea version={versions.service_area}/>, 
+      <Reviews />
+    ]
+  } />
 
-const HomePage = HomePageStack
+  const HomePageCarousel = <Carousel pages={
+    [
+      <Home />, 
+      <AboutUs />, 
+      <Services isLandingPageFormat={true}/>, 
+      <ServiceArea version={versions.service_area}/>, 
+      <Reviews />
+    ]
+  } />
 
-export const pages: Page[] = [{page: 'Home', link: '/', element: HomePage}, ...base_pages.splice(1)]
+  return isMobile ? HomePageStack : HomePageSlideshow
+}
+
+export const pages: Page[] = [{page: 'Home', link: '/', element: <HomePage />}, ...base_pages.splice(1)]
 
 export const footer_text = 'A small team based in Lancaster, PA, providing  services since 2009'
 
