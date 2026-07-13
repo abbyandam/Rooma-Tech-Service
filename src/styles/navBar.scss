@@ -110,6 +110,8 @@
         padding-block: 0.5em;
         width: max-content;
 
+        @include mobile { padding-block: 1em; }
+
         hr {
             border: 1px solid $color-background-surface;
             border-radius: $border-radius-sm;
