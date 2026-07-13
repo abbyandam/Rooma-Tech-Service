@@ -1,6 +1,6 @@
 @use '../styles/main.scss' as *;
 
-.quote {
+.quote.v1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: calc(100vh - var(--navbar-height));
@@ -143,6 +143,262 @@
         .textarea-wrapper {
             position: relative;
             margin-bottom: 1.25em;
+
+            p {
+                position: absolute;
+                align-self: end;
+                right: 0.5em;
+                color: $color-background-border;
+            }
+        }
+
+        .photos {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1em;
+            width: fit-content;
+            height: fit-content;
+            padding: 0.4em;
+
+            .upload-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 0.1em;
+            }
+
+
+            .file-name-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            hr {
+                border: solid 1px $color-background-surface;
+                border-radius: $border-radius-lg;
+            }
+
+            button {
+                padding: 0;
+                display: flex;
+                align-items: center;
+                color: $color-primary;
+                transition: $transition-fast;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .errors {
+            color: $color-primary-light;
+            font-size: $font-size-xs;
+            padding: 0.5em;
+        }
+
+
+    }
+
+    .loading {
+        background: $color-background-surface;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .submission {
+        background: $color-background-surface;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        height: 100%;
+        justify-content: center;
+        gap: 5em;
+        @include mobile { gap: 2em; }
+        align-items: center;
+
+        p {
+            font-size: $font-size-md;
+            text-align: center;
+            max-width: 40ch;
+
+            @include mobile {
+                font-size: $font-size-sm;
+            }
+        }
+    }
+}
+
+.quote.v2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - var(--navbar-height));
+    position: relative;
+    @include mobile {
+        grid-template-columns: 1fr;
+        grid-template-rows: fit-content 1fr;
+    }
+
+    img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(45%);
+    }
+
+    .contact {
+        @include flex-center;
+        flex-direction: column;
+        color: $color-background;
+        gap: 0.75em;
+        padding: 2em;
+
+        hr {
+            width: 75%;
+            border: solid 1px $color-background;
+            border-radius: $border-radius-lg;
+        }
+
+        p {
+            font-size: $font-size-md;
+            max-width: 40ch;
+        }
+
+        .fill-out-form {
+            text-align: center;
+        }
+    }
+
+    form {
+        background: $color-background-surface;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        justify-content: center;
+        margin: min(2em, 5vw);
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-diagonal;
+        font-size: $font-size-sm;
+        max-width: min(50vw, 600px);
+
+        @include mobile {
+            max-width: min(100vw, 500px);
+        }
+
+        max-height: calc(100vh - var(--navbar-height) - 4em);
+        justify-self: center;
+
+        div {
+            width: 100%;
+            display: flex;
+            gap: 1em;
+
+            @include mobile {
+                gap: 0.5em;
+            }
+        }
+
+        input, select, textarea, .photos {
+            width: 100%;
+            height: 3em;
+            border: none;
+            border-radius: $border-radius-md;
+            box-shadow: $shadow-diagonal;
+            background: $color-background;
+            padding: 0.5em;
+            margin-bottom: 1.25em;
+        }
+
+        select, textarea {
+            margin-bottom: 0;
+        }
+
+        input::placeholder, textarea::placeholder, select:has(option[value=""]:checked) {
+            color: $color-background-border;
+        }
+
+        textarea {
+            height: 100%;
+        }
+
+        .upload-button {
+            background: $color-background;
+            padding: 1em;
+            border-radius: $border-radius-md;
+            width: fit-content;
+            display: flex;
+            gap: 0.25em;
+            align-items: center;
+            justify-content: center;
+            box-shadow: $shadow-diagonal;
+            color: $color-text;
+            transition: $transition-fast;
+
+            &:hover {
+                transform: scale(105%);
+                filter: brightness(105%);
+            }
+        }
+
+        .secondary-button {
+            align-self: center;
+            margin-bottom: 1rem;
+        }
+
+        div.input {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+            margin-bottom: 0em;
+
+            span.required {
+                font-size: $font-size-xs;
+                color: $color-primary-light;
+                padding-inline: 0.25em;
+            }
+
+            input {
+                margin-bottom: 0;
+            }
+        }
+
+        input.required, select.required {
+            border: solid $color-primary-light 1px;
+            background: color-mix(in srgb,  $color-primary-light 5%, $color-background);
+            
+            &::placeholder,  &:has(option[value=""]:checked) {
+                color: $color-primary-light;
+            }
+        }
+
+        select, textarea {
+            appearance: none;
+            -webkit-appearance: none;
+            resize: none;
+        }
+
+        .select-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25em;
+            position: relative;
+
+            svg {
+                position: absolute;
+                right: 1em;
+                color: $color-text;
+            }
+        }
+
+        .textarea-wrapper {
+            position: relative;
+            margin-bottom: 1.25em;
+            min-height: 100px;
+            max-height: 200px;
+            flex-shrink: 1;
+            flex-grow: 1;
 
             p {
                 position: absolute;

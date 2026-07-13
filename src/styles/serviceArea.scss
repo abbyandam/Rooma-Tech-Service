@@ -35,9 +35,24 @@
     }
 }
 
+.service-area-v2-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.15;
+    }
+}
+
 .service-area.v2 {
     display: grid;
     grid-template-columns: 1fr 2px 1fr;
+    z-index: 1;
     
     @include mobile {
         grid-template-columns: 1fr;
@@ -110,7 +125,7 @@
 
     hr {
         height: 100%;
-        border: solid 1px $color-background-surface;
+        border: solid 1px $color-text-muted;
         border-radius: $border-radius-lg;
 
         @include mobile {
@@ -126,7 +141,7 @@
         align-items: center;
     }
 
-    img {
+    .map {
         object-fit: cover;
         height: 90%;
         width: auto;

@@ -1,5 +1,5 @@
-import Carousel from "./components/Carousel.tsx"
-import Slideshow from "./components/Slideshow.tsx"
+// import Carousel from "./components/Carousel.tsx"
+// import Slideshow from "./components/Slideshow.tsx"
 import Stack from "./components/Stack.tsx"
 import AboutUs from "./pages/AboutUs"
 import Gallery from "./pages/Gallery"
@@ -31,7 +31,8 @@ export const service_options = [
 ]
 
 const versions = {
-  service_area: 'v2' as const
+  service_area: 'v2' as const,
+  quote: 'v2' as const
 }
 
 export const base_pages: Page[] = [{page: 'Home', link: '/', element: <Home />}, 
@@ -40,13 +41,21 @@ export const base_pages: Page[] = [{page: 'Home', link: '/', element: <Home />},
     {page: 'Service Area', link: '/service-area', element: <ServiceArea version={versions.service_area}/>},
     {page: 'Gallery', link: '/gallery', element: <Gallery />},
     {page: 'Reviews', link: '/reviews', element: <Reviews />},
-    {page: 'Get a Quote', link: '/quote', element: <Quote />}]
+    {page: 'Get a Quote', link: '/quote', element: <Quote version={versions.quote}/>}]
     
 
 // Home page display options. Note: Not every layout has been tested for mobile
-const HomePageStack = <Stack pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Gallery />, <Reviews />, <Quote />]} />
-const HomePageSlideshow = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
-const HomePageCarousel = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
+const HomePageStack = <Stack pages={
+  [
+    <Home />, 
+    <AboutUs />, 
+    <Services isLandingPageFormat={true}/>, 
+    <ServiceArea version={versions.service_area}/>, 
+    <Gallery />, <Reviews />, 
+    <Quote version={versions.quote}/>
+  ]} />
+// const HomePageSlideshow = <Slideshow pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
+// const HomePageCarousel = <Carousel pages={[<Home />, <AboutUs />, <Services isLandingPageFormat={true}/>, <ServiceArea version={versions.service_area}/>, <Reviews />]} />
 
 const HomePage = HomePageStack
 
@@ -54,7 +63,7 @@ export const pages: Page[] = [{page: 'Home', link: '/', element: HomePage}, ...b
 
 export const footer_text = 'A small team based in Lancaster, PA, providing  services since 2009'
 
-export const license = "HIC License PA#I42602"
+export const license = "PA#I42602"
 
 export const contact_info = {
     phone: import.meta.env.VITE_PHONE_NUMBER,

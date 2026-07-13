@@ -79,7 +79,7 @@ export default function Gallery() {
         <div className="gallery">
             <div className='gap'/>
             <div className='gap'/>
-            <h2>Gallery</h2>
+            <h2 className='title'>Gallery</h2>
             <div className='gap'/>
             <div className='gap'/>
             <div className='images'>
@@ -90,8 +90,8 @@ export default function Gallery() {
                 >
                     { befores_ext.map((_, i) => (
                         <div className='image' key={i}>
-                            <img src={befores_ext[i]} loading='lazy'/>
-                            <img src={afters_ext[i]} loading='lazy'/>
+                            <img src={befores_ext[i]} />
+                            <img src={afters_ext[i]} />
                         </div>
                     ))}
                 </div>
