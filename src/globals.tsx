@@ -81,12 +81,12 @@ function HomePage() {
     ]
   } />
 
-  return isMobile ? HomePageStack : HomePageSlideshow
+  return isMobile ? HomePageStack : HomePageStack
 }
 
 export const pages: Page[] = [{page: 'Home', link: '/', element: <HomePage />}, ...base_pages.splice(1)]
 
-export const footer_text = 'A small team based in Lancaster, PA, providing  services since 2009'
+export const footer_text = 'A small team based in Lancaster, PA, providing services since 2009'
 
 export const license = "PA#I42602"
 
@@ -102,7 +102,7 @@ export const hours = {
     closed_days: 'Sat-Sun',
 }
 
-export const aboutUs = "Rooma Tech Service is a small team based in Lancaster, PA. We've been in the trades for over 24 years, providing services since 2009 and officially launching in the Lancaster area in 2019. We have full certifications in HVAC, OSHA Safety, and EMP, ensuring quality work.\n\nPersonal service is a guarantee. When you call, you're speaking directly to the person doing the work. No waiting months for a project to start. We don’t deal with subcontractors so we can start sooner and get the job done faster.\n\nAt the end of the day, happy customers is the top priority. We deliver luxury work with solutions for all problems, leaving the job site with happy customers. Every project gets full attention and is done right the first time."
+export const aboutUs = "Rooma Tech Service is a small team based in Lancaster, PA. We've been in the trades for over 24 years, providing services since 2009 and officially launching in the Lancaster area in 2019. We are OSHA certified, HVAC licensed, and certified electrician and plumbers, ensuring quality work.\n\nPersonal service is a guarantee. When you call, you're speaking directly to the person doing the work. No waiting months for a project to start. You don’t deal with subcontractors so we can start sooner and get the job done faster.\n\nAt the end of the day, satisfied customers is our top priority. We deliver luxury work with solutions for all problems, leaving the job site with no mess left behind. Every project gets full attention and is done right the first time."
 
 export const cities = ['Lancaster', 'Lititz', 'New Holland', 'Reading', 'Mt Joy', 'Middletown', 'West Chester', 'York', 'Lebanon', 'Harrisburg', 'Elizabethtown']
 
